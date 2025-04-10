@@ -14,15 +14,15 @@
     <img src="{{ asset('build/img/logo.png') }}" alt="HeartTrack AI Logo" class="logo">
 
     <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-        <a href="#features">Features</a>
+        <a href="{{ route('landing') }}">Home</a>
+        <a href="{{ route('about') }}">About Us</a>
+        <a href="{{ route('contact') }}">Contact</a>
+        <a href="{{ route('features') }}">Features</a>
     </nav>
 
     <div class="auth-buttons">
-        <a href="/register" class="btn">Register</a>
-        <a href="/login" class="btn">Login</a>
+        <a href="{{ route('register') }}" class="btn">Register</a>
+        <a href="{{ route('login') }}" class="btn">Login</a>
     </div>
 </header>
 
