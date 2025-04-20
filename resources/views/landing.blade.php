@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeartTrack AI</title>
+    <title>bio feltilizers tesh system</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('build/assets/css/landing.css') }}">
