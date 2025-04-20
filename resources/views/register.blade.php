@@ -11,9 +11,11 @@
 
     <nav class="nav-links">
         <a href="{{ route('landing') }}">Home</a>
-        <a href="{{ route('about') }}">About Us</a>
+   
         <a href="{{ route('contact') }}">Contact</a>
-        <a href="{{ route('features') }}">Features</a>
+        <a href="{{ route('landing') }}#about">About Us</a>
+<a href="{{ route('landing') }}#features">Features</a>
+
     </nav>
 
     <div class="auth-buttons">

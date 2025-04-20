@@ -15,9 +15,9 @@
 
     <nav class="nav-links">
         <a href="{{ route('landing') }}">Home</a>
-        <a href="{{ route('about') }}">About Us</a>
+        <a href="#about">About Us</a>
         <a href="{{ route('contact') }}">Contact</a>
-        <a href="{{ route('features') }}">Features</a>
+        <a href="#features">Features</a>
     </nav>
 
     <div class="auth-buttons">
@@ -63,6 +63,36 @@
             </div>
         </div>
     </section>
+    <section class="features" id="features">
+    <h2>Why Choose HeartTrack AI?</h2>
+    <div class="features-list">
+        <div class="feature">
+            <h3>🧠 AI-Driven Insights</h3>
+            <p>Go beyond basic tracking — understand patterns and receive actionable health advice tailored to you.</p>
+        </div>
+        <div class="feature">
+            <h3>🔐 Private & Secure</h3>
+            <p>All your health data is protected with advanced encryption. You stay in control of your personal information.</p>
+        </div>
+        <div class="feature">
+            <h3>🌐 Accessible Anywhere</h3>
+            <p>Access your dashboard across all your devices — whether you're at home, at work, or on the go.</p>
+        </div>
+        <div class="feature">
+            <h3>🙌 Easy to Use</h3>
+            <p>No technical skills needed. Just wear your device and let HeartTrack AI do the rest.</p>
+        </div>
+    </div>
+</section>
+<section class="about-us" id="about">
+    <h2>About Us</h2>
+    <p>
+        At HeartTrack AI, we're reimagining healthcare through technology. Born from the need to make heart monitoring smarter and more accessible, our team of engineers, health experts, and visionaries created a solution that bridges wearable tech with artificial intelligence.
+    </p>
+    <p>
+        Our mission is to empower individuals to take control of their heart health anytime, anywhere — with real-time insights and preventative care powered by data. From early detection to peace of mind, HeartTrack AI is here to support your wellness journey.
+    </p>
+</section>
 
     <footer class="footer">
         <p>&copy; {{ date('Y') }} HeartTrack AI. All rights reserved.</p>
