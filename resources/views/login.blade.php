@@ -25,11 +25,13 @@
 </header>
     <div class="login-section">
         <h1>Login</h1>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
+        <form action="{{ route('login.store') }}" method="POST">
+    @csrf
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+</form>
+
     </div>
 </body>
 </html>

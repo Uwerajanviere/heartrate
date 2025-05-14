@@ -25,12 +25,15 @@
 </header>
     <div class="register-section">
         <h1>Create an Account</h1>
-        <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
+        <form action="{{ route('register.store') }}" method="POST">
+        @csrf
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+</form>
+
     </div>
 </body>
 </html>
