@@ -16,12 +16,37 @@ class LoginController extends Controller
     // Handle login
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/dashboard'); // Redirect to the dashboard after login
+            $request->session()->regenerate();
+            
+            // Update last login time
+            $user = Auth::user();
+            $user->last_login_at = now();
+            $user->save();
+
+            if ($user->isAdmin()) {
+                return redirect()->intended('admin/dashboard');
+            } else {
+                return redirect()->intended('user/dashboard');
+            }
         }
 
-        return back()->withErrors(['email' => 'Invalid credentials']);
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
+        return redirect()->route('landing');
     }
 }

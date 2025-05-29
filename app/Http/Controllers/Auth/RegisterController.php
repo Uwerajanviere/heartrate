@@ -32,20 +32,21 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed', // expects password_confirmation field
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'user', // Automatically set role as user
         ]);
     
         Auth::login($user); // auto-login after registration
     
-        return redirect()->route('dashboard'); // or wherever you want to redirect
+        return redirect()->route('userdashboard');
     }
 
     /**
